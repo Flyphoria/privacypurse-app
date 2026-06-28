@@ -682,6 +682,9 @@ class SFr extends S {
   String get navigationMain => 'Tableau de bord';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Paramètres';
 
   @override

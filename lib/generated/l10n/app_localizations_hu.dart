@@ -681,6 +681,9 @@ class SHu extends S {
   String get navigationMain => 'Irányítópult';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Beállítások';
 
   @override

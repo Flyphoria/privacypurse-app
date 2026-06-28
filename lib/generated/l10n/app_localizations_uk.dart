@@ -694,6 +694,9 @@ class SUk extends S {
   String get navigationMain => 'Панель керування';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Налаштування';
 
   @override

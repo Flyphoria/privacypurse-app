@@ -679,6 +679,9 @@ class SPl extends S {
   String get navigationMain => 'Pulpit';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Ustawienia';
 
   @override

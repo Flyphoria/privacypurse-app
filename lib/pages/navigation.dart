@@ -10,6 +10,7 @@ import 'package:waterflyiii/pages/accounts.dart';
 import 'package:waterflyiii/pages/bills.dart';
 import 'package:waterflyiii/pages/categories.dart';
 import 'package:waterflyiii/pages/home.dart';
+import 'package:waterflyiii/pages/home/review.dart';
 import 'package:waterflyiii/pages/settings.dart';
 
 final Logger log = Logger("Pages.Navigation");
@@ -105,6 +106,12 @@ class NavPageState extends State<NavPage> with TickerProviderStateMixin {
         const HomePage(),
         const Icon(Icons.dashboard_outlined),
         const Icon(Icons.dashboard),
+      ),
+      NavDestination(
+        S.of(context).navigationReview,
+        const HomeReview(),
+        const Icon(Icons.fact_check_outlined),
+        const Icon(Icons.fact_check),
       ),
       NavDestination(
         S.of(context).navigationAccounts,

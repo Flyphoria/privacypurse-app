@@ -678,6 +678,9 @@ class SEs extends S {
   String get navigationMain => 'Panel de control';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Configuración';
 
   @override

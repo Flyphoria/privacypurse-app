@@ -681,6 +681,9 @@ class STr extends S {
   String get navigationMain => 'Kontrol Paneli';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Ayarlar';
 
   @override

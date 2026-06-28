@@ -664,6 +664,9 @@ class SZh extends S {
   String get navigationMain => '仪表盘';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => '设置';
 
   @override

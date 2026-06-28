@@ -677,6 +677,9 @@ class SCs extends S {
   String get navigationMain => 'Nástěnka';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Nastavení';
 
   @override

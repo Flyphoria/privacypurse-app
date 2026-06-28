@@ -666,6 +666,9 @@ class SKo extends S {
   String get navigationMain => '대시보드';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => '설정';
 
   @override

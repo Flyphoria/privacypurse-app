@@ -670,6 +670,9 @@ class SFa extends S {
   String get navigationMain => 'داشبورد';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'تنظیمات';
 
   @override

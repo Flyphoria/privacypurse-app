@@ -683,6 +683,9 @@ class SRu extends S {
   String get navigationMain => 'Панель управления';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Настройки';
 
   @override

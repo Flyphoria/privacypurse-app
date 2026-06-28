@@ -877,6 +877,10 @@
     "@navigationMain": {
         "description": "Navigation Label: Dashboard"
     },
+    "navigationReview": "Review",
+    "@navigationReview": {
+        "description": "Navigation Label: the needs-review transaction queue (uncategorized transactions to review)"
+    },
     "generalSettings": "Settings",
     "@generalSettings": {
         "description": "Label: Settings"

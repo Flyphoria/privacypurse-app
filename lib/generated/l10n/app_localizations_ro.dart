@@ -675,6 +675,9 @@ class SRo extends S {
   String get navigationMain => 'Tablou de bord';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Setări';
 
   @override

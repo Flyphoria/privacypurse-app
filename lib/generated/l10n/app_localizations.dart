@@ -1140,6 +1140,12 @@ abstract class S {
   /// **'Dashboard'**
   String get navigationMain;
 
+  /// Navigation Label: the needs-review transaction queue (uncategorized transactions to review)
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get navigationReview;
+
   /// Label: Settings
   ///
   /// In en, this message translates to:

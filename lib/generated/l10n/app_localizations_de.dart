@@ -673,6 +673,9 @@ class SDe extends S {
   String get navigationMain => 'Dashboard';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Einstellungen';
 
   @override

@@ -674,6 +674,9 @@ class SDa extends S {
   String get navigationMain => 'Oversigt';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Indstillinger';
 
   @override

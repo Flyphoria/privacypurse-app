@@ -683,6 +683,9 @@ class SPt extends S {
   String get navigationMain => 'Painel';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Configurações';
 
   @override

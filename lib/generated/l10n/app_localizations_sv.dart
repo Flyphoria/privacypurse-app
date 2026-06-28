@@ -673,6 +673,9 @@ class SSv extends S {
   String get navigationMain => 'Kontrollpanel';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Inställningar';
 
   @override

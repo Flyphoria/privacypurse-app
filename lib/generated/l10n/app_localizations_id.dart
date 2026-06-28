@@ -676,6 +676,9 @@ class SId extends S {
   String get navigationMain => 'Dasbor';
 
   @override
+  String get navigationReview => 'Review';
+
+  @override
   String get generalSettings => 'Pengaturan';
 
   @override
