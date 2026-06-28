@@ -21,6 +21,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:version/version.dart';
 import 'package:waterflyiii/generated/l10n/app_localizations.dart';
 import 'package:waterflyiii/generated/swagger_fireflyiii_api/firefly_iii.swagger.dart';
+import 'package:waterflyiii/oauth.dart';
 import 'package:waterflyiii/stock.dart';
 import 'package:waterflyiii/timezonehandler.dart';
 
@@ -151,11 +152,17 @@ class AuthErrorNoInstance extends AuthError {
 }
 
 class AuthCredentials {
-  const AuthCredentials({this.host, this.apiKey, this.customHeadersRaw});
+  const AuthCredentials({
+    this.host,
+    this.apiKey,
+    this.customHeadersRaw,
+    this.refreshToken,
+  });
 
   final String? host;
   final String? apiKey;
   final String? customHeadersRaw;
+  final String? refreshToken;
 }
 
 http.Client get httpClient => Platform.isAndroid
@@ -171,24 +178,41 @@ http.Client get httpClient => Platform.isAndroid
     : http.Client();
 
 class APIRequestInterceptor implements Interceptor {
-  APIRequestInterceptor(this.headerFunc);
+  APIRequestInterceptor(this.headerFunc, [this.onTokenRefresh]);
 
-  final Function() headerFunc;
+  final Map<String, String> Function() headerFunc;
+
+  /// Called when a request returns 401; should refresh the OAuth access token
+  /// and return the new one (or null if refresh is impossible). The request is
+  /// then replayed once with the refreshed token.
+  final Future<String?> Function()? onTokenRefresh;
+
+  Request _applied(Request base) {
+    final Request request = applyHeaders(base, headerFunc(), override: true);
+    request.followRedirects = true;
+    request.maxRedirects = 5;
+    return request;
+  }
 
   @override
-  FutureOr<Response<BodyType>> intercept<BodyType>(Chain<BodyType> chain) {
+  FutureOr<Response<BodyType>> intercept<BodyType>(
+    Chain<BodyType> chain,
+  ) async {
     log.finest(() => "API query ${chain.request.method} ${chain.request.url}");
     if (chain.request.body != null) {
       log.finest(() => "Query Body: ${chain.request.body}");
     }
-    final Request request = applyHeaders(
-      chain.request,
-      headerFunc(),
-      override: true,
-    );
-    request.followRedirects = true;
-    request.maxRedirects = 5;
-    return chain.proceed(request);
+    Response<BodyType> response = await chain.proceed(_applied(chain.request));
+
+    // On 401, try a one-shot OAuth token refresh and replay the request.
+    if (response.statusCode == 401 && onTokenRefresh != null) {
+      log.fine(() => "Got 401, attempting OAuth token refresh");
+      final String? newToken = await onTokenRefresh!.call();
+      if (newToken != null) {
+        response = await chain.proceed(_applied(chain.request));
+      }
+    }
+    return response;
   }
 }
 
@@ -203,6 +227,9 @@ class AuthUser {
   Uri get host => _host;
   FireflyIii get api => _api;
 
+  /// Replaces the bearer token in-place after an OAuth token refresh.
+  void updateToken(String apiKey) => _apiKey = apiKey;
+
   //FireflyIiiV2 get apiV2 => _apiV2;
 
   final Logger log = Logger("Auth.AuthUser");
@@ -210,8 +237,9 @@ class AuthUser {
   AuthUser._create(
     Uri host,
     String apiKey,
-    Map<String, String>? customHeaders,
-  ) {
+    Map<String, String>? customHeaders, {
+    Future<String?> Function()? onTokenRefresh,
+  }) {
     log.config("AuthUser->_create($host)");
     _host = host.replace(pathSegments: <String>[...host.pathSegments, "api"]);
     _apiKey = apiKey;
@@ -220,7 +248,9 @@ class AuthUser {
     _api = FireflyIii.create(
       baseUrl: _host,
       httpClient: httpClient,
-      interceptors: <Interceptor>[APIRequestInterceptor(headers)],
+      interceptors: <Interceptor>[
+        APIRequestInterceptor(headers, onTokenRefresh),
+      ],
     );
 
     /*_apiV2 = FireflyIiiV2.create(
@@ -242,6 +272,7 @@ class AuthUser {
     String host,
     String apiKey, {
     Map<String, String>? customHeaders,
+    Future<String?> Function()? onTokenRefresh,
   }) async {
     final Logger log = Logger("Auth.AuthUser");
     log.config("AuthUser->create($host)");
@@ -296,7 +327,12 @@ class AuthUser {
       client.close();
     }
 
-    return AuthUser._create(uri, apiKey, customHeaders);
+    return AuthUser._create(
+      uri,
+      apiKey,
+      customHeaders,
+      onTokenRefresh: onTokenRefresh,
+    );
   }
 }
 
@@ -350,7 +386,50 @@ class FireflyService with ChangeNotifier {
       host: await storage.read(key: 'api_host'),
       apiKey: await storage.read(key: 'api_key'),
       customHeadersRaw: await storage.read(key: 'api_headers'),
+      refreshToken: await storage.read(key: 'api_refresh_token'),
     );
+  }
+
+  /// Guards against several concurrent 401s all triggering a refresh.
+  Completer<String?>? _refreshCompleter;
+
+  /// Exchanges the stored OAuth refresh token for a fresh access token, updates
+  /// the active session + secure storage, and returns the new token (or null if
+  /// no refresh token is stored or the refresh fails). Safe to call concurrently.
+  Future<String?> refreshAccessToken() async {
+    if (_refreshCompleter != null) {
+      return _refreshCompleter!.future;
+    }
+    final Completer<String?> completer = Completer<String?>();
+    _refreshCompleter = completer;
+    try {
+      final String? host = await storage.read(key: 'api_host');
+      final String? refreshToken = await storage.read(key: 'api_refresh_token');
+      if (host == null || refreshToken == null) {
+        completer.complete(null);
+      } else {
+        final OAuthResult result = await OAuthService.refresh(
+          host,
+          refreshToken,
+        );
+        _currentUser?.updateToken(result.accessToken);
+        await storage.write(key: 'api_key', value: result.accessToken);
+        if (result.refreshToken != null) {
+          await storage.write(
+            key: 'api_refresh_token',
+            value: result.refreshToken,
+          );
+        }
+        log.fine(() => "OAuth token refreshed");
+        completer.complete(result.accessToken);
+      }
+    } catch (e) {
+      log.warning("Token refresh failed", e);
+      completer.complete(null);
+    } finally {
+      _refreshCompleter = null;
+    }
+    return completer.future;
   }
 
   Future<bool> signInFromStorage() async {
@@ -359,10 +438,12 @@ class FireflyService with ChangeNotifier {
     final String? apiHost = storedCredentials.host;
     final String? apiKey = storedCredentials.apiKey;
     final String? customHeadersRaw = storedCredentials.customHeadersRaw;
+    final String? refreshToken = storedCredentials.refreshToken;
 
     log.config(
       "storage: $apiHost, apiKey ${apiKey?.isEmpty ?? true ? "unset" : "set"}, "
-      "customHeaders ${(customHeadersRaw?.isNotEmpty ?? false) ? "set" : "unset"}",
+      "customHeaders ${(customHeadersRaw?.isNotEmpty ?? false) ? "set" : "unset"}, "
+      "refreshToken ${(refreshToken?.isNotEmpty ?? false) ? "set" : "unset"}",
     );
 
     if (apiHost == null || apiKey == null) {
@@ -370,8 +451,39 @@ class FireflyService with ChangeNotifier {
     }
 
     try {
-      await signIn(apiHost, apiKey, customHeadersRaw: customHeadersRaw);
+      await signIn(
+        apiHost,
+        apiKey,
+        customHeadersRaw: customHeadersRaw,
+        refreshToken: refreshToken,
+      );
       return true;
+    } on AuthErrorApiKey catch (e) {
+      // The stored access token is rejected (likely expired). The initial
+      // validation in AuthUser.create() uses a raw request that bypasses the
+      // 401-retry interceptor, so refresh once here and retry the whole sign-in.
+      if (refreshToken != null) {
+        try {
+          final OAuthResult refreshed = await OAuthService.refresh(
+            apiHost,
+            refreshToken,
+          );
+          await signIn(
+            apiHost,
+            refreshed.accessToken,
+            customHeadersRaw: customHeadersRaw,
+            refreshToken: refreshed.refreshToken ?? refreshToken,
+          );
+          return true;
+        } catch (e2) {
+          _storageSignInException = e2;
+          notifyListeners();
+          return false;
+        }
+      }
+      _storageSignInException = e;
+      notifyListeners();
+      return false;
     } catch (e) {
       _storageSignInException = e;
       log.finest(() => "notify FireflyService->signInFromStorage");
@@ -397,6 +509,7 @@ class FireflyService with ChangeNotifier {
     String host,
     String apiKey, {
     String? customHeadersRaw,
+    String? refreshToken,
   }) async {
     log.config("FireflyService->signIn($host)");
     host = host.strip().rightStrip('/');
@@ -411,6 +524,7 @@ class FireflyService with ChangeNotifier {
       host,
       apiKey,
       customHeaders: customHeaders,
+      onTokenRefresh: refreshAccessToken,
     );
     final Response<CurrencySingle> currencyInfo = await nextUser.api
         .v1CurrenciesPrimaryGet();
@@ -470,6 +584,9 @@ class FireflyService with ChangeNotifier {
         key: 'api_headers',
         value: encodeCustomHeaders(customHeaders),
       );
+    }
+    if (refreshToken != null) {
+      await storage.write(key: 'api_refresh_token', value: refreshToken);
     }
 
     return true;

@@ -107,6 +107,7 @@ class _LoginPageState extends State<LoginPage> {
               host: host,
               apiKey: result.accessToken,
               customHeadersRaw: customHeadersRaw,
+              refreshToken: result.refreshToken,
             ),
           ),
         ),

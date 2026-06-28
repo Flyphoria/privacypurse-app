@@ -142,4 +142,43 @@ class OAuthService {
       expiresIn: data['expires_in'] as int?,
     );
   }
+
+  /// Exchanges a [refreshToken] for a fresh access token (and a new refresh
+  /// token). Used when the stored access token has expired. [host] is the
+  /// backend base URL (no trailing slash, no `/api`).
+  static Future<OAuthResult> refresh(String host, String refreshToken) async {
+    host = _normalizeHost(host);
+
+    final http.Response response = await http.post(
+      Uri.parse('$host/oauth/token'),
+      headers: const <String, String>{
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: <String, String>{
+        'grant_type': 'refresh_token',
+        'refresh_token': refreshToken,
+        'client_id': kOAuthClientId,
+        'scope': '',
+      },
+    );
+
+    if (response.statusCode != 200) {
+      log.warning("Token refresh failed: ${response.statusCode} ${response.body}");
+      throw OAuthError("token_refresh_failed_${response.statusCode}");
+    }
+
+    final Map<String, dynamic> data =
+        json.decode(response.body) as Map<String, dynamic>;
+    final String? accessToken = data['access_token'] as String?;
+    if (accessToken == null || accessToken.isEmpty) {
+      throw const OAuthError("missing_access_token");
+    }
+
+    return OAuthResult(
+      accessToken: accessToken,
+      refreshToken: data['refresh_token'] as String?,
+      expiresIn: data['expires_in'] as int?,
+    );
+  }
 }

@@ -10,11 +10,18 @@ import 'package:waterflyiii/widgets/logo.dart';
 final Logger log = Logger("Pages.Splash");
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({super.key, this.host, this.apiKey, this.customHeadersRaw});
+  const SplashPage({
+    super.key,
+    this.host,
+    this.apiKey,
+    this.customHeadersRaw,
+    this.refreshToken,
+  });
 
   final String? host;
   final String? apiKey;
   final String? customHeadersRaw;
+  final String? refreshToken;
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -44,6 +51,7 @@ class _SplashPageState extends State<SplashPage> {
           host,
           apiKey,
           customHeadersRaw: widget.customHeadersRaw,
+          refreshToken: widget.refreshToken,
         );
       }
     } catch (e, stackTrace) {
