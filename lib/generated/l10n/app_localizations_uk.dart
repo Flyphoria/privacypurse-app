@@ -647,6 +647,15 @@ class SUk extends S {
       'Щоб ефективно використовувати PrivacyPurse, вам потрібен власний сервер із встановленим екземпляром Firefly III або доповненням Firefly III для Home Assistant.\n\nБудь ласка, введіть повну URL-адресу та персональний токен доступу (Settings -> Profile -> OAuth -> Personal Access Token) нижче.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Приховати заголовки';
 
   @override

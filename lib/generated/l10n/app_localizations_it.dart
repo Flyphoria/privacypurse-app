@@ -630,6 +630,15 @@ class SIt extends S {
       'Per utilizzare PrivacyPurse produttivamente è necessario il proprio server con un\'istanza di Firefly III o l\'add-on di Firefly III per Home Assistant.\n\nInserisci l\'URL completo e un token di accesso personale (Opzioni -> Profilo -> OAuth -> Token di accesso personale) qui sotto.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Nascondi intestazioni';
 
   @override

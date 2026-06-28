@@ -629,6 +629,15 @@ class SNl extends S {
       'Om PrivacyPurse productief te gebruiken, heb je je eigen server nodig met een Firefly III-installatie of de Firefly III-add-on voor Home Assistant.\n\nVoer de volledige URL en ook een persoonlijke toegangstoken in (Instellingen -> Profiel -> OAuth -> Persoonlijke Toegang) hieronder in.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Headers verbergen';
 
   @override

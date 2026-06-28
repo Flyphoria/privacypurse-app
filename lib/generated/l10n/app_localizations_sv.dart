@@ -627,6 +627,15 @@ class SSv extends S {
       'För att använda PrivacyPurse på ett produktivt sätt behöver du din egen server med en Firefly III instans eller Firefly III-tillägget för Home Assistant.\n\nAnge hela URL: en samt en personlig åtkomst-token (inställningar -> Profil -> OAuth -> Personlig åtkomst-token) nedan.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Dölj rubriker';
 
   @override

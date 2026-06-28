@@ -636,6 +636,15 @@ class SRu extends S {
       'Для эффективного использования PrivacyPurse Вам необходим собственный сервер с установленным Firefly III или аддоном Firefly III для Home Assistant.\n\nПожалуйста, введите полный URL-адрес и персональный ключ доступа (Настройки -> Профиль -> OAuth -> Персональный ключ доступа).';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Скрыть заголовки';
 
   @override

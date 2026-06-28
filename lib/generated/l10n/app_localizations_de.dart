@@ -627,6 +627,15 @@ class SDe extends S {
       'Um PrivacyPurse nutzen zu können, wird ein eigener Server mit Firefly III oder das Firefly III Add-on für Home Assistant benötigt.\n\nBitte gebe den kompletten Link und den persönlichen Zugangs-Token (Einstellungen → Profil → OAuth → Persönliche Zugangs-Tokens) ein.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Header ausblenden';
 
   @override

@@ -621,6 +621,15 @@ class SKo extends S {
       'PrivacyPurse를 사용하려면 Firefly III 인스턴스가 있는 서버나 Home Assistant용 Firefly III 애드온이 필요합니다.\n\n아래에 전체 URL과 개인 액세스 토큰(설정 -> 프로필 -> OAuth -> 개인 액세스 토큰)을 입력하세요.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => '헤더 숨기기';
 
   @override

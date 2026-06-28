@@ -1047,8 +1047,26 @@ abstract class S {
   /// Login screen welcome description
   ///
   /// In en, this message translates to:
-  /// **'To use PrivacyPurse productively you need your own server with a Firefly III instance or the Firefly III add-on for Home Assistant.\n\nPlease enter the full URL as well as a personal access token (Settings -> Profile -> OAuth -> Personal Access Token) below.'**
+  /// **'Sign in with your PrivacyPurse account to get started. You\'ll be securely redirected to PrivacyPurse to log in, then brought right back to the app.'**
   String get loginAbout;
+
+  /// Login Form: Shown when the OAuth sign-in flow fails or is cancelled
+  ///
+  /// In en, this message translates to:
+  /// **'Sign-in failed. Please try again.'**
+  String get loginErrorOAuth;
+
+  /// Login Form: Label for button to show advanced options (server URL, custom headers) - should be similar length than hide advanced button
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced'**
+  String get loginFormButtonShowAdvanced;
+
+  /// Login Form: Label for button to hide advanced options - should be similar length than show advanced button
+  ///
+  /// In en, this message translates to:
+  /// **'Hide Advanced'**
+  String get loginFormButtonHideAdvanced;
 
   /// Login Form: Label for button to hide Custom Headers field - should be similar length than show custom headers button
   ///

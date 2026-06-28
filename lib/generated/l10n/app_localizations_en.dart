@@ -624,7 +624,16 @@ class SEn extends S {
 
   @override
   String get loginAbout =>
-      'To use PrivacyPurse productively you need your own server with a Firefly III instance or the Firefly III add-on for Home Assistant.\n\nPlease enter the full URL as well as a personal access token (Settings -> Profile -> OAuth -> Personal Access Token) below.';
+      'Sign in with your PrivacyPurse account to get started. You\'ll be securely redirected to PrivacyPurse to log in, then brought right back to the app.';
+
+  @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
 
   @override
   String get loginFormButtonHideHeaders => 'Hide Headers';

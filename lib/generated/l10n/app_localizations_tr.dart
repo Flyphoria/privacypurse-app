@@ -635,6 +635,15 @@ class STr extends S {
       'PrivacyPurse\'ü verimli kullanabilmek için kendi Firefly III sunucunuza veya Home Assistant için Firefly III eklentisine ihtiyacınız var.\n\nLütfen aşağıya tam URL adresini ve kişisel erişim jetonunu (Ayarlar -> Profil -> OAuth -> Personal Access Token) girin.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Başlıkları Gizle';
 
   @override

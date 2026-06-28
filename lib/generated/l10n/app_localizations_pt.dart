@@ -637,6 +637,15 @@ class SPt extends S {
       'Para usar o PrivacyPurse produtivamente, você precisa do seu próprio servidor com uma instância do Firefly III ou o complemento do Firefly III para o Home Assistant.\n\nPor favor, insira a URL completa, bem como um token de acesso pessoal (Configurações -> Perfil -> OAuth -> Token de acesso pessoal) abaixo.';
 
   @override
+  String get loginErrorOAuth => 'Sign-in failed. Please try again.';
+
+  @override
+  String get loginFormButtonShowAdvanced => 'Advanced';
+
+  @override
+  String get loginFormButtonHideAdvanced => 'Hide Advanced';
+
+  @override
   String get loginFormButtonHideHeaders => 'Ocultar Cabeçalhos';
 
   @override
