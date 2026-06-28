@@ -793,7 +793,7 @@
     "@liabilityTypeMortgage": {
         "description": "Firefly Translation String: account_type_mortgage"
     },
-    "loginAbout": "Pour utiliser Waterfly III, vous avez besoin de votre propre serveur avec une instance Firefly III ou le module complémentaire Firefly III pour Home Assistant.\n\nVeuillez renseigner l'URL complète ainsi qu'un jeton d'accès personnel (Options -> Profil -> OAuth -> Jetons d'accès personnel) ci-dessous.",
+    "loginAbout": "Pour utiliser PrivacyPurse, vous avez besoin de votre propre serveur avec une instance Firefly III ou le module complémentaire Firefly III pour Home Assistant.\n\nVeuillez renseigner l'URL complète ainsi qu'un jeton d'accès personnel (Options -> Profil -> OAuth -> Jetons d'accès personnel) ci-dessous.",
     "@loginAbout": {
         "description": "Login screen welcome description"
     },
@@ -821,7 +821,7 @@
     "@loginFormLabelHost": {
         "description": "Login Form: Label for Host field"
     },
-    "loginWelcome": "Bienvenue sur Waterfly III",
+    "loginWelcome": "Bienvenue sur PrivacyPurse",
     "@loginWelcome": {
         "description": "Login screen welcome banner"
     },

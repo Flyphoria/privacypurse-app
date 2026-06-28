@@ -789,7 +789,7 @@
     "@liabilityTypeMortgage": {
         "description": "Firefly Translation String: account_type_mortgage"
     },
-    "loginAbout": "Untuk menggunakan Waterfly III secara produktif anda memerlukan server sendiri dengan instansi Firefly III atau tambahan Firefly III untuk Home Assistant.\n\nSilahkan masukkan URL penuh serta token akses pribadi (Pengaturan -> Profil -> OAuth -> Token Akses Pribadi) di bawah.",
+    "loginAbout": "Untuk menggunakan PrivacyPurse secara produktif anda memerlukan server sendiri dengan instansi Firefly III atau tambahan Firefly III untuk Home Assistant.\n\nSilahkan masukkan URL penuh serta token akses pribadi (Pengaturan -> Profil -> OAuth -> Token Akses Pribadi) di bawah.",
     "@loginAbout": {
         "description": "Login screen welcome description"
     },
@@ -817,7 +817,7 @@
     "@loginFormLabelHost": {
         "description": "Login Form: Label for Host field"
     },
-    "loginWelcome": "Selamat Datang di Waterfly III",
+    "loginWelcome": "Selamat Datang di PrivacyPurse",
     "@loginWelcome": {
         "description": "Login screen welcome banner"
     },

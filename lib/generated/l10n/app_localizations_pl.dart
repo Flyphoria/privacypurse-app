@@ -629,7 +629,7 @@ class SPl extends S {
 
   @override
   String get loginAbout =>
-      'Aby wydajnie korzystać z Waterfly III, potrzebujesz własnego serwera z instancją Firefly III lub dodatkiem Firefly III dla asystenta domowego.\n\nWprowadź pełny adres URL oraz osobisty token dostępu (Ustawienia -> Profil -> OAuth -> Osobisty token dostępu) poniżej.';
+      'Aby wydajnie korzystać z PrivacyPurse, potrzebujesz własnego serwera z instancją Firefly III lub dodatkiem Firefly III dla asystenta domowego.\n\nWprowadź pełny adres URL oraz osobisty token dostępu (Ustawienia -> Profil -> OAuth -> Osobisty token dostępu) poniżej.';
 
   @override
   String get loginFormButtonHideHeaders => 'Ukryj nagłówki';
@@ -651,7 +651,7 @@ class SPl extends S {
   String get loginFormLabelHost => 'Adres URL hosta';
 
   @override
-  String get loginWelcome => 'Witaj w Waterfly III';
+  String get loginWelcome => 'Witaj w PrivacyPurse';
 
   @override
   String get logoutConfirmation =>

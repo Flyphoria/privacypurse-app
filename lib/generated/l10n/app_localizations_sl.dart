@@ -627,7 +627,7 @@ class SSl extends S {
 
   @override
   String get loginAbout =>
-      'Za funkcijsko uporabo Waterfly III potrebujete lasten strežnik z namestitvijo Firefly III ali dodatek Firefly III za Home Assistant.\n\nSpodaj vnesite poln URL in osebni žeton dostopa (Možnosti-> Profil -> OAuth -> Osebni dostopni žetoni).';
+      'Za funkcijsko uporabo PrivacyPurse potrebujete lasten strežnik z namestitvijo Firefly III ali dodatek Firefly III za Home Assistant.\n\nSpodaj vnesite poln URL in osebni žeton dostopa (Možnosti-> Profil -> OAuth -> Osebni dostopni žetoni).';
 
   @override
   String get loginFormButtonHideHeaders => 'Skrij glave';
@@ -649,7 +649,7 @@ class SSl extends S {
   String get loginFormLabelHost => 'URL gostitelja';
 
   @override
-  String get loginWelcome => 'Dobrodošli v Waterfly III';
+  String get loginWelcome => 'Dobrodošli v PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Ali ste prepričani, da se želite odjaviti?';

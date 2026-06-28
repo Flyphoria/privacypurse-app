@@ -632,7 +632,7 @@ class SFr extends S {
 
   @override
   String get loginAbout =>
-      'Pour utiliser Waterfly III, vous avez besoin de votre propre serveur avec une instance Firefly III ou le module complémentaire Firefly III pour Home Assistant.\n\nVeuillez renseigner l\'URL complète ainsi qu\'un jeton d\'accès personnel (Options -> Profil -> OAuth -> Jetons d\'accès personnel) ci-dessous.';
+      'Pour utiliser PrivacyPurse, vous avez besoin de votre propre serveur avec une instance Firefly III ou le module complémentaire Firefly III pour Home Assistant.\n\nVeuillez renseigner l\'URL complète ainsi qu\'un jeton d\'accès personnel (Options -> Profil -> OAuth -> Jetons d\'accès personnel) ci-dessous.';
 
   @override
   String get loginFormButtonHideHeaders => 'Masquer les en-têtes';
@@ -654,7 +654,7 @@ class SFr extends S {
   String get loginFormLabelHost => 'URL du serveur';
 
   @override
-  String get loginWelcome => 'Bienvenue sur Waterfly III';
+  String get loginWelcome => 'Bienvenue sur PrivacyPurse';
 
   @override
   String get logoutConfirmation =>

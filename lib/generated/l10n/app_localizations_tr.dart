@@ -632,7 +632,7 @@ class STr extends S {
 
   @override
   String get loginAbout =>
-      'Waterfly III\'ü verimli kullanabilmek için kendi Firefly III sunucunuza veya Home Assistant için Firefly III eklentisine ihtiyacınız var.\n\nLütfen aşağıya tam URL adresini ve kişisel erişim jetonunu (Ayarlar -> Profil -> OAuth -> Personal Access Token) girin.';
+      'PrivacyPurse\'ü verimli kullanabilmek için kendi Firefly III sunucunuza veya Home Assistant için Firefly III eklentisine ihtiyacınız var.\n\nLütfen aşağıya tam URL adresini ve kişisel erişim jetonunu (Ayarlar -> Profil -> OAuth -> Personal Access Token) girin.';
 
   @override
   String get loginFormButtonHideHeaders => 'Başlıkları Gizle';
@@ -654,7 +654,7 @@ class STr extends S {
   String get loginFormLabelHost => 'Sunucu URL\'si';
 
   @override
-  String get loginWelcome => 'Waterfly III\'e Hoş Geldiniz';
+  String get loginWelcome => 'PrivacyPurse\'e Hoş Geldiniz';
 
   @override
   String get logoutConfirmation => 'Çıkış yapmak istediğinizden emin misiniz?';

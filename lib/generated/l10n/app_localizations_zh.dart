@@ -1587,7 +1587,7 @@ class SZhTw extends SZh {
 
   @override
   String get loginAbout =>
-      '想要使用 Waterfly III 的完整功能，您必須架設您的 Firefly III 伺服器，或是安裝智慧家居的擴充功能 (您可以在 Firefly III 官網找到相關的指引)。\n\n請在以下欄位輸入您的伺服器的完整網址，以及您的個人存取權杖 (設定 -> 個人檔案 -> OAuth -> 個人存取權杖)。';
+      '想要使用 PrivacyPurse 的完整功能，您必須架設您的 Firefly III 伺服器，或是安裝智慧家居的擴充功能 (您可以在 Firefly III 官網找到相關的指引)。\n\n請在以下欄位輸入您的伺服器的完整網址，以及您的個人存取權杖 (設定 -> 個人檔案 -> OAuth -> 個人存取權杖)。';
 
   @override
   String get loginFormButtonHideHeaders => '隱藏標頭';
@@ -1608,7 +1608,7 @@ class SZhTw extends SZh {
   String get loginFormLabelHost => '伺服器的網址';
 
   @override
-  String get loginWelcome => '歡迎使用 Waterfly III';
+  String get loginWelcome => '歡迎使用 PrivacyPurse';
 
   @override
   String get logoutConfirmation => '您確定要登出？';

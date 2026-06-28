@@ -813,7 +813,7 @@
     "@liabilityTypeMortgage": {
         "description": "Firefly Translation String: account_type_mortgage"
     },
-    "loginAbout": "A Waterfly III hatékony használatához saját szerveren futtatott Firefly III-ra vagy Firefly III kiegészítővel ellátott Home Assistant-re van szükség.\n\nKérjük, adja meg alább a teljes URL-t, valamint egy személyes hozzáférési tokent (Beállítások -> Profil -> OAuth -> Személyes hozzáférési tokenek).",
+    "loginAbout": "A PrivacyPurse hatékony használatához saját szerveren futtatott Firefly III-ra vagy Firefly III kiegészítővel ellátott Home Assistant-re van szükség.\n\nKérjük, adja meg alább a teljes URL-t, valamint egy személyes hozzáférési tokent (Beállítások -> Profil -> OAuth -> Személyes hozzáférési tokenek).",
     "@loginAbout": {
         "description": "Login screen welcome description"
     },
@@ -841,7 +841,7 @@
     "@loginFormLabelHost": {
         "description": "Login Form: Label for Host field"
     },
-    "loginWelcome": "Üdvözöljük a Waterfly III-ban",
+    "loginWelcome": "Üdvözöljük a PrivacyPurse-ban",
     "@loginWelcome": {
         "description": "Login screen welcome banner"
     },

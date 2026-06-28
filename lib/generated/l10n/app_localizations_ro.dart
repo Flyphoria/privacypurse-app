@@ -626,7 +626,7 @@ class SRo extends S {
 
   @override
   String get loginAbout =>
-      'Pentru a folosi Waterfly III în mod productiv ai nevoie de propriul server cu o instanță Firefly III sau cu suplimentul Firefly III pentru asistentul la domiciliu.\n\nVă rugăm să introduceți adresa URL completă, precum și un token personal de acces (Setări -> Profile -> OAuth -> Personal Access Token) de mai jos.';
+      'Pentru a folosi PrivacyPurse în mod productiv ai nevoie de propriul server cu o instanță Firefly III sau cu suplimentul Firefly III pentru asistentul la domiciliu.\n\nVă rugăm să introduceți adresa URL completă, precum și un token personal de acces (Setări -> Profile -> OAuth -> Personal Access Token) de mai jos.';
 
   @override
   String get loginFormButtonHideHeaders => 'Ascunde antetele';
@@ -648,7 +648,7 @@ class SRo extends S {
   String get loginFormLabelHost => 'URL Host';
 
   @override
-  String get loginWelcome => 'Bine ai venit la Waterfly III';
+  String get loginWelcome => 'Bine ai venit la PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Ești sigur(ă) că vrei să te deconectezi?';

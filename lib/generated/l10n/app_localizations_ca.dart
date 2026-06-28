@@ -632,7 +632,7 @@ class SCa extends S {
 
   @override
   String get loginAbout =>
-      'Per a fer servir Waterfly III adequadament cal que tingues el teu propi servidor de Firefly III o l\'add-on de Firefly III a Home Assistant.\n\nPer favor, introdueix la URL completa a més del token d\'accés (Configuració -> Perfil -> OAuth -> Token d\'Accés Personal) a sota.';
+      'Per a fer servir PrivacyPurse adequadament cal que tingues el teu propi servidor de Firefly III o l\'add-on de Firefly III a Home Assistant.\n\nPer favor, introdueix la URL completa a més del token d\'accés (Configuració -> Perfil -> OAuth -> Token d\'Accés Personal) a sota.';
 
   @override
   String get loginFormButtonHideHeaders => 'Amaga les capçaleres';
@@ -654,7 +654,7 @@ class SCa extends S {
   String get loginFormLabelHost => 'URL d\'allotjament';
 
   @override
-  String get loginWelcome => 'Benvingut/da a Waterfly III';
+  String get loginWelcome => 'Benvingut/da a PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Segur que vols tancar la sessió?';

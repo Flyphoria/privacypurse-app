@@ -634,7 +634,7 @@ class SPt extends S {
 
   @override
   String get loginAbout =>
-      'Para usar o Waterfly III produtivamente, você precisa do seu próprio servidor com uma instância do Firefly III ou o complemento do Firefly III para o Home Assistant.\n\nPor favor, insira a URL completa, bem como um token de acesso pessoal (Configurações -> Perfil -> OAuth -> Token de acesso pessoal) abaixo.';
+      'Para usar o PrivacyPurse produtivamente, você precisa do seu próprio servidor com uma instância do Firefly III ou o complemento do Firefly III para o Home Assistant.\n\nPor favor, insira a URL completa, bem como um token de acesso pessoal (Configurações -> Perfil -> OAuth -> Token de acesso pessoal) abaixo.';
 
   @override
   String get loginFormButtonHideHeaders => 'Ocultar Cabeçalhos';
@@ -656,7 +656,7 @@ class SPt extends S {
   String get loginFormLabelHost => 'URL do Host';
 
   @override
-  String get loginWelcome => 'Bem-vindo ao Waterfly III';
+  String get loginWelcome => 'Bem-vindo ao PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Tem certeza de que deseja sair?';
@@ -1639,7 +1639,7 @@ class SPtBr extends SPt {
 
   @override
   String get loginAbout =>
-      'Para usar o Waterfly III de maneira produtiva, você precisa de seu próprio servidor com uma instância do Firefly III ou o add-on Firefly III para o Home Assistant.\n\nPor favor, insira a URL completa, bem como um token de acesso pessoal (Opções -> Perfil -> OAuth -> Tokens de acesso pessoal) abaixo.';
+      'Para usar o PrivacyPurse de maneira produtiva, você precisa de seu próprio servidor com uma instância do Firefly III ou o add-on Firefly III para o Home Assistant.\n\nPor favor, insira a URL completa, bem como um token de acesso pessoal (Opções -> Perfil -> OAuth -> Tokens de acesso pessoal) abaixo.';
 
   @override
   String get loginFormButtonHideHeaders => 'Ocultar cabeçalhos';
@@ -1661,7 +1661,7 @@ class SPtBr extends SPt {
   String get loginFormLabelHost => 'URL do servidor';
 
   @override
-  String get loginWelcome => 'Bem vindo ao Waterfly III';
+  String get loginWelcome => 'Bem vindo ao PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Tem certeza que deseja sair?';

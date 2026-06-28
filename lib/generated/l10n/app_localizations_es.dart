@@ -629,7 +629,7 @@ class SEs extends S {
 
   @override
   String get loginAbout =>
-      'Para usar Waterfly III es necesario disponer de un servidor con una instancia de Firefly III o del add-on de Firefly III para Home Assistant.\n\nPor favor, introduzca la URL completa y el token de acceso personal (Ajustes -> Perfil -> OAuth -> Token de Acceso Personal) debajo.';
+      'Para usar PrivacyPurse es necesario disponer de un servidor con una instancia de Firefly III o del add-on de Firefly III para Home Assistant.\n\nPor favor, introduzca la URL completa y el token de acceso personal (Ajustes -> Perfil -> OAuth -> Token de Acceso Personal) debajo.';
 
   @override
   String get loginFormButtonHideHeaders => 'Ocultar cabeceras';
@@ -651,7 +651,7 @@ class SEs extends S {
   String get loginFormLabelHost => 'URL del servidor';
 
   @override
-  String get loginWelcome => 'Bienvenido a Waterfly III';
+  String get loginWelcome => 'Bienvenido a PrivacyPurse';
 
   @override
   String get logoutConfirmation => '¿Estás seguro de que deseas cerrar sesión?';

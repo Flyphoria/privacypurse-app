@@ -276,7 +276,7 @@ class _WaterflyAppState extends State<WaterflyApp> {
             final FireflyService firefly = context.watch<FireflyService>();
 
             return MaterialApp(
-              title: 'Waterfly III',
+              title: 'PrivacyPurse',
               theme: ThemeData(
                 brightness: .light,
                 colorScheme: settings.dynamicColors

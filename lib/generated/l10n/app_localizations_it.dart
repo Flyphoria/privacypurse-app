@@ -627,7 +627,7 @@ class SIt extends S {
 
   @override
   String get loginAbout =>
-      'Per utilizzare Waterfly III produttivamente è necessario il proprio server con un\'istanza di Firefly III o l\'add-on di Firefly III per Home Assistant.\n\nInserisci l\'URL completo e un token di accesso personale (Opzioni -> Profilo -> OAuth -> Token di accesso personale) qui sotto.';
+      'Per utilizzare PrivacyPurse produttivamente è necessario il proprio server con un\'istanza di Firefly III o l\'add-on di Firefly III per Home Assistant.\n\nInserisci l\'URL completo e un token di accesso personale (Opzioni -> Profilo -> OAuth -> Token di accesso personale) qui sotto.';
 
   @override
   String get loginFormButtonHideHeaders => 'Nascondi intestazioni';
@@ -649,7 +649,7 @@ class SIt extends S {
   String get loginFormLabelHost => 'URL del server';
 
   @override
-  String get loginWelcome => 'Benvenuto su Waterfly III';
+  String get loginWelcome => 'Benvenuto su PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Sei sicuro di volerti disconnettere?';

@@ -627,7 +627,7 @@ class SId extends S {
 
   @override
   String get loginAbout =>
-      'Untuk menggunakan Waterfly III secara produktif anda memerlukan server sendiri dengan instansi Firefly III atau tambahan Firefly III untuk Home Assistant.\n\nSilahkan masukkan URL penuh serta token akses pribadi (Pengaturan -> Profil -> OAuth -> Token Akses Pribadi) di bawah.';
+      'Untuk menggunakan PrivacyPurse secara produktif anda memerlukan server sendiri dengan instansi Firefly III atau tambahan Firefly III untuk Home Assistant.\n\nSilahkan masukkan URL penuh serta token akses pribadi (Pengaturan -> Profil -> OAuth -> Token Akses Pribadi) di bawah.';
 
   @override
   String get loginFormButtonHideHeaders => 'Sembunyikan Header';
@@ -649,7 +649,7 @@ class SId extends S {
   String get loginFormLabelHost => 'URL Host';
 
   @override
-  String get loginWelcome => 'Selamat Datang di Waterfly III';
+  String get loginWelcome => 'Selamat Datang di PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Yakin ingin keluar?';

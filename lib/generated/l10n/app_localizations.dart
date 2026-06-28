@@ -1047,7 +1047,7 @@ abstract class S {
   /// Login screen welcome description
   ///
   /// In en, this message translates to:
-  /// **'To use Waterfly III productively you need your own server with a Firefly III instance or the Firefly III add-on for Home Assistant.\n\nPlease enter the full URL as well as a personal access token (Settings -> Profile -> OAuth -> Personal Access Token) below.'**
+  /// **'To use PrivacyPurse productively you need your own server with a Firefly III instance or the Firefly III add-on for Home Assistant.\n\nPlease enter the full URL as well as a personal access token (Settings -> Profile -> OAuth -> Personal Access Token) below.'**
   String get loginAbout;
 
   /// Login Form: Label for button to hide Custom Headers field - should be similar length than show custom headers button
@@ -1089,7 +1089,7 @@ abstract class S {
   /// Login screen welcome banner
   ///
   /// In en, this message translates to:
-  /// **'Welcome to Waterfly III'**
+  /// **'Welcome to PrivacyPurse'**
   String get loginWelcome;
 
   /// Get user confirmation if he really wants to log out

@@ -618,7 +618,7 @@ class SKo extends S {
 
   @override
   String get loginAbout =>
-      'Waterfly III를 사용하려면 Firefly III 인스턴스가 있는 서버나 Home Assistant용 Firefly III 애드온이 필요합니다.\n\n아래에 전체 URL과 개인 액세스 토큰(설정 -> 프로필 -> OAuth -> 개인 액세스 토큰)을 입력하세요.';
+      'PrivacyPurse를 사용하려면 Firefly III 인스턴스가 있는 서버나 Home Assistant용 Firefly III 애드온이 필요합니다.\n\n아래에 전체 URL과 개인 액세스 토큰(설정 -> 프로필 -> OAuth -> 개인 액세스 토큰)을 입력하세요.';
 
   @override
   String get loginFormButtonHideHeaders => '헤더 숨기기';
@@ -639,7 +639,7 @@ class SKo extends S {
   String get loginFormLabelHost => '호스트 URL';
 
   @override
-  String get loginWelcome => 'Waterfly III에 오신 것을 환영합니다';
+  String get loginWelcome => 'PrivacyPurse에 오신 것을 환영합니다';
 
   @override
   String get logoutConfirmation => '로그아웃 하시겠습니까?';

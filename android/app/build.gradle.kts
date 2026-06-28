@@ -33,7 +33,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.dreautall.waterflyiii"
+        applicationId = "io.privacypurse.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = 28

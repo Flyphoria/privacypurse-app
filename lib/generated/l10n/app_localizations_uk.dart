@@ -644,7 +644,7 @@ class SUk extends S {
 
   @override
   String get loginAbout =>
-      'Щоб ефективно використовувати Waterfly III, вам потрібен власний сервер із встановленим екземпляром Firefly III або доповненням Firefly III для Home Assistant.\n\nБудь ласка, введіть повну URL-адресу та персональний токен доступу (Settings -> Profile -> OAuth -> Personal Access Token) нижче.';
+      'Щоб ефективно використовувати PrivacyPurse, вам потрібен власний сервер із встановленим екземпляром Firefly III або доповненням Firefly III для Home Assistant.\n\nБудь ласка, введіть повну URL-адресу та персональний токен доступу (Settings -> Profile -> OAuth -> Personal Access Token) нижче.';
 
   @override
   String get loginFormButtonHideHeaders => 'Приховати заголовки';
@@ -667,7 +667,7 @@ class SUk extends S {
   String get loginFormLabelHost => 'URL хоста';
 
   @override
-  String get loginWelcome => 'Ласкаво просимо до Waterfly III';
+  String get loginWelcome => 'Ласкаво просимо до PrivacyPurse';
 
   @override
   String get logoutConfirmation => 'Ви впевнені, що хочете вийти?';
