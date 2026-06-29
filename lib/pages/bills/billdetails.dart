@@ -10,6 +10,7 @@ import 'package:waterflyiii/auth.dart';
 import 'package:waterflyiii/extensions.dart';
 import 'package:waterflyiii/generated/l10n/app_localizations.dart';
 import 'package:waterflyiii/generated/swagger_fireflyiii_api/firefly_iii.swagger.dart';
+import 'package:waterflyiii/pages/bills/addedit.dart';
 import 'package:waterflyiii/pages/bills/billchart.dart';
 import 'package:waterflyiii/pages/transaction.dart';
 import 'package:waterflyiii/timezonehandler.dart';
@@ -62,6 +63,24 @@ class _BillDetailsState extends State<BillDetails> {
         elevation: 1,
         scrolledUnderElevation: 1,
         backgroundColor: Theme.of(context).colorScheme.surface,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.edit),
+            tooltip: S.of(context).billTitleEdit,
+            onPressed: () async {
+              final bool? changed = await showDialog<bool>(
+                context: context,
+                builder: (BuildContext context) =>
+                    BillAddEditDialog(bill: widget.bill),
+              );
+              // Pop back to the (refreshing) list when the bill was edited or
+              // deleted, since this detail view holds a now-stale copy.
+              if ((changed ?? false) && context.mounted) {
+                Navigator.of(context).pop(true);
+              }
+            },
+          ),
+        ],
       ),
       body: Column(
         children: <Widget>[

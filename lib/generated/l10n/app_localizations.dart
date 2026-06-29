@@ -1146,6 +1146,156 @@ abstract class S {
   /// **'Review'**
   String get navigationReview;
 
+  /// Navigation Label: Budgets
+  ///
+  /// In en, this message translates to:
+  /// **'Budgets'**
+  String get navigationBudgets;
+
+  /// Generic form label for an active/enabled toggle
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get formLabelActive;
+
+  /// Frequency option: daily
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get freqDaily;
+
+  /// Frequency option: weekly
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly'**
+  String get freqWeekly;
+
+  /// Frequency option: monthly
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly'**
+  String get freqMonthly;
+
+  /// Frequency option: quarterly
+  ///
+  /// In en, this message translates to:
+  /// **'Quarterly'**
+  String get freqQuarterly;
+
+  /// Frequency option: every half year
+  ///
+  /// In en, this message translates to:
+  /// **'Half-yearly'**
+  String get freqHalfYearly;
+
+  /// Frequency option: yearly
+  ///
+  /// In en, this message translates to:
+  /// **'Yearly'**
+  String get freqYearly;
+
+  /// Title of the add-bill dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Add bill'**
+  String get billTitleAdd;
+
+  /// Title of the edit-bill dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Edit bill'**
+  String get billTitleEdit;
+
+  /// Title of the delete-bill confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Delete bill'**
+  String get billTitleDelete;
+
+  /// Delete-bill confirmation body
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this bill?'**
+  String get billDeleteConfirm;
+
+  /// Bill form: minimum expected amount
+  ///
+  /// In en, this message translates to:
+  /// **'Minimum amount'**
+  String get billFormLabelAmountMin;
+
+  /// Bill form: maximum expected amount
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum amount'**
+  String get billFormLabelAmountMax;
+
+  /// Bill form: start/anchor date
+  ///
+  /// In en, this message translates to:
+  /// **'Start date'**
+  String get billFormLabelDate;
+
+  /// Bill form: repeat frequency
+  ///
+  /// In en, this message translates to:
+  /// **'Frequency'**
+  String get billFormLabelFrequency;
+
+  /// Title of the add-budget dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Add budget'**
+  String get budgetTitleAdd;
+
+  /// Title of the edit-budget dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Edit budget'**
+  String get budgetTitleEdit;
+
+  /// Title of the delete-budget confirmation
+  ///
+  /// In en, this message translates to:
+  /// **'Delete budget'**
+  String get budgetTitleDelete;
+
+  /// Delete-budget confirmation body
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this budget?'**
+  String get budgetDeleteConfirm;
+
+  /// Budget form: recurring auto-budget amount
+  ///
+  /// In en, this message translates to:
+  /// **'Amount per period'**
+  String get budgetFormLabelAmount;
+
+  /// Budget form: helper text for the amount field
+  ///
+  /// In en, this message translates to:
+  /// **'Leave empty for a budget with no set amount'**
+  String get budgetFormLabelAmountHelp;
+
+  /// Budget form: auto-budget period
+  ///
+  /// In en, this message translates to:
+  /// **'Period'**
+  String get budgetFormLabelPeriod;
+
+  /// Empty state for the budgets list
+  ///
+  /// In en, this message translates to:
+  /// **'No budgets yet. Tap + to create one.'**
+  String get budgetsListEmpty;
+
+  /// Shown when the budgets list fails to load
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading budgets'**
+  String get budgetErrorLoading;
+
   /// Label: Settings
   ///
   /// In en, this message translates to:

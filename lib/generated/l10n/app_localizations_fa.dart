@@ -673,6 +673,83 @@ class SFa extends S {
   String get navigationReview => 'Review';
 
   @override
+  String get navigationBudgets => 'Budgets';
+
+  @override
+  String get formLabelActive => 'Active';
+
+  @override
+  String get freqDaily => 'Daily';
+
+  @override
+  String get freqWeekly => 'Weekly';
+
+  @override
+  String get freqMonthly => 'Monthly';
+
+  @override
+  String get freqQuarterly => 'Quarterly';
+
+  @override
+  String get freqHalfYearly => 'Half-yearly';
+
+  @override
+  String get freqYearly => 'Yearly';
+
+  @override
+  String get billTitleAdd => 'Add bill';
+
+  @override
+  String get billTitleEdit => 'Edit bill';
+
+  @override
+  String get billTitleDelete => 'Delete bill';
+
+  @override
+  String get billDeleteConfirm => 'Are you sure you want to delete this bill?';
+
+  @override
+  String get billFormLabelAmountMin => 'Minimum amount';
+
+  @override
+  String get billFormLabelAmountMax => 'Maximum amount';
+
+  @override
+  String get billFormLabelDate => 'Start date';
+
+  @override
+  String get billFormLabelFrequency => 'Frequency';
+
+  @override
+  String get budgetTitleAdd => 'Add budget';
+
+  @override
+  String get budgetTitleEdit => 'Edit budget';
+
+  @override
+  String get budgetTitleDelete => 'Delete budget';
+
+  @override
+  String get budgetDeleteConfirm =>
+      'Are you sure you want to delete this budget?';
+
+  @override
+  String get budgetFormLabelAmount => 'Amount per period';
+
+  @override
+  String get budgetFormLabelAmountHelp =>
+      'Leave empty for a budget with no set amount';
+
+  @override
+  String get budgetFormLabelPeriod => 'Period';
+
+  @override
+  String get budgetsListEmpty => 'No budgets yet. Tap + to create one.';
+
+  @override
+  String get budgetErrorLoading => 'Error loading budgets';
+
+  @override
   String get generalSettings => 'تنظیمات';
 
   @override

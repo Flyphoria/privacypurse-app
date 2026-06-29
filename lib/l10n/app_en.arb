@@ -881,6 +881,106 @@
     "@navigationReview": {
         "description": "Navigation Label: the needs-review transaction queue (uncategorized transactions to review)"
     },
+    "navigationBudgets": "Budgets",
+    "@navigationBudgets": {
+        "description": "Navigation Label: Budgets"
+    },
+    "formLabelActive": "Active",
+    "@formLabelActive": {
+        "description": "Generic form label for an active/enabled toggle"
+    },
+    "freqDaily": "Daily",
+    "@freqDaily": {
+        "description": "Frequency option: daily"
+    },
+    "freqWeekly": "Weekly",
+    "@freqWeekly": {
+        "description": "Frequency option: weekly"
+    },
+    "freqMonthly": "Monthly",
+    "@freqMonthly": {
+        "description": "Frequency option: monthly"
+    },
+    "freqQuarterly": "Quarterly",
+    "@freqQuarterly": {
+        "description": "Frequency option: quarterly"
+    },
+    "freqHalfYearly": "Half-yearly",
+    "@freqHalfYearly": {
+        "description": "Frequency option: every half year"
+    },
+    "freqYearly": "Yearly",
+    "@freqYearly": {
+        "description": "Frequency option: yearly"
+    },
+    "billTitleAdd": "Add bill",
+    "@billTitleAdd": {
+        "description": "Title of the add-bill dialog"
+    },
+    "billTitleEdit": "Edit bill",
+    "@billTitleEdit": {
+        "description": "Title of the edit-bill dialog"
+    },
+    "billTitleDelete": "Delete bill",
+    "@billTitleDelete": {
+        "description": "Title of the delete-bill confirmation"
+    },
+    "billDeleteConfirm": "Are you sure you want to delete this bill?",
+    "@billDeleteConfirm": {
+        "description": "Delete-bill confirmation body"
+    },
+    "billFormLabelAmountMin": "Minimum amount",
+    "@billFormLabelAmountMin": {
+        "description": "Bill form: minimum expected amount"
+    },
+    "billFormLabelAmountMax": "Maximum amount",
+    "@billFormLabelAmountMax": {
+        "description": "Bill form: maximum expected amount"
+    },
+    "billFormLabelDate": "Start date",
+    "@billFormLabelDate": {
+        "description": "Bill form: start/anchor date"
+    },
+    "billFormLabelFrequency": "Frequency",
+    "@billFormLabelFrequency": {
+        "description": "Bill form: repeat frequency"
+    },
+    "budgetTitleAdd": "Add budget",
+    "@budgetTitleAdd": {
+        "description": "Title of the add-budget dialog"
+    },
+    "budgetTitleEdit": "Edit budget",
+    "@budgetTitleEdit": {
+        "description": "Title of the edit-budget dialog"
+    },
+    "budgetTitleDelete": "Delete budget",
+    "@budgetTitleDelete": {
+        "description": "Title of the delete-budget confirmation"
+    },
+    "budgetDeleteConfirm": "Are you sure you want to delete this budget?",
+    "@budgetDeleteConfirm": {
+        "description": "Delete-budget confirmation body"
+    },
+    "budgetFormLabelAmount": "Amount per period",
+    "@budgetFormLabelAmount": {
+        "description": "Budget form: recurring auto-budget amount"
+    },
+    "budgetFormLabelAmountHelp": "Leave empty for a budget with no set amount",
+    "@budgetFormLabelAmountHelp": {
+        "description": "Budget form: helper text for the amount field"
+    },
+    "budgetFormLabelPeriod": "Period",
+    "@budgetFormLabelPeriod": {
+        "description": "Budget form: auto-budget period"
+    },
+    "budgetsListEmpty": "No budgets yet. Tap + to create one.",
+    "@budgetsListEmpty": {
+        "description": "Empty state for the budgets list"
+    },
+    "budgetErrorLoading": "Error loading budgets",
+    "@budgetErrorLoading": {
+        "description": "Shown when the budgets list fails to load"
+    },
     "generalSettings": "Settings",
     "@generalSettings": {
         "description": "Label: Settings"

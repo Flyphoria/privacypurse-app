@@ -9,6 +9,7 @@ import 'package:waterflyiii/auth.dart';
 import 'package:waterflyiii/extensions.dart';
 import 'package:waterflyiii/generated/l10n/app_localizations.dart';
 import 'package:waterflyiii/generated/swagger_fireflyiii_api/firefly_iii.swagger.dart';
+import 'package:waterflyiii/pages/bills/addedit.dart';
 import 'package:waterflyiii/pages/bills/billdetails.dart';
 import 'package:waterflyiii/pages/navigation.dart';
 import 'package:waterflyiii/settings.dart';
@@ -70,6 +71,20 @@ class _BillsPageState extends State<BillsPage>
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<NavPageElements>().appBarActions = <Widget>[
+        IconButton(
+          icon: const Icon(Icons.add),
+          tooltip: S.of(context).billTitleAdd,
+          onPressed: () async {
+            final bool? ok = await showDialog<bool>(
+              context: context,
+              builder: (BuildContext context) =>
+                  const BillAddEditDialog(bill: null),
+            );
+            if (ok ?? false) {
+              setState(() {});
+            }
+          },
+        ),
         IconButton(
           icon: const Icon(Icons.settings),
           tooltip: S.of(context).generalSettings,
@@ -213,6 +228,11 @@ class _BillsPageState extends State<BillsPage>
 
   Widget _billRowBuilder(BillRead bill) {
     return OpenContainer(
+      onClosed: (Object? edited) {
+        if (edited == true) {
+          setState(() {});
+        }
+      },
       openBuilder: (BuildContext context, Function closedContainer) =>
           BillDetails(bill: bill),
       openColor: _billsLayout == .list

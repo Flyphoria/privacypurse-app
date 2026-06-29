@@ -8,6 +8,7 @@ import 'package:waterflyiii/generated/l10n/app_localizations.dart';
 import 'package:waterflyiii/layout.dart';
 import 'package:waterflyiii/pages/accounts.dart';
 import 'package:waterflyiii/pages/bills.dart';
+import 'package:waterflyiii/pages/budgets.dart';
 import 'package:waterflyiii/pages/categories.dart';
 import 'package:waterflyiii/pages/home.dart';
 import 'package:waterflyiii/pages/home/review.dart';
@@ -124,6 +125,12 @@ class NavPageState extends State<NavPage> with TickerProviderStateMixin {
         const CategoriesPage(),
         const Icon(Icons.assignment_outlined),
         const Icon(Icons.assignment),
+      ),
+      NavDestination(
+        S.of(context).navigationBudgets,
+        const BudgetsPage(),
+        const Icon(Icons.account_balance_wallet_outlined),
+        const Icon(Icons.account_balance_wallet),
       ),
       NavDestination(
         S.of(context).navigationBills,
